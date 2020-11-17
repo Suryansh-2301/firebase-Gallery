@@ -32,7 +32,7 @@ with SingleTickerProviderStateMixin {
 
     _animationIcon = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
     _animationColor = ColorTween(
-      begin: Colors.blue,
+      begin: Colors.deepOrange,
       end: Colors.red,
     ).animate(CurvedAnimation(
       parent: _controller,
