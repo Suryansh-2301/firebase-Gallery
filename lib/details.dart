@@ -12,18 +12,16 @@ class _DetailScreenState extends State<DetailScreen> {
   int _progress = 0;
   @override
   void initState() {
-    // TODO: implement initState
-    super.initState();
     ImageDownloader.callback(onProgressUpdate: (String imageId, int progress) {
       setState(() {
         _progress = progress;
       });
     });
+    super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 

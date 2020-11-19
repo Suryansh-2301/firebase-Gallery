@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:firebase_gallery/details.dart';
 import 'package:image_picker/image_picker.dart';
@@ -26,9 +27,10 @@ class _ImagesState extends State<Images> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Container(
+      body: Container(
         child: StreamBuilder(
           stream: imgColRef.snapshots(includeMetadataChanges: true),
           builder: (context, snapshot) {
@@ -62,8 +64,7 @@ class _ImagesState extends State<Images> {
                           BorderRadius.all(Radius.circular(12)),
                           child: FadeInImage.memoryNetwork(
                             placeholder: kTransparentImage,
-                            image:
-                            snapshot.data.documents[index].get('url'),
+                            image: snapshot.data.documents[index].get('url'),
                             fit: BoxFit.cover,
                           ),
                         ),

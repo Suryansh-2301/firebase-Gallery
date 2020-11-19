@@ -1,3 +1,4 @@
+import 'package:firebase_gallery/videoscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_gallery/custom_fab.dart';
 import 'package:image_picker/image_picker.dart';
@@ -34,7 +35,7 @@ class _VideoState extends State<Video> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      body: Center(child: Text('this is the videos page'),),
+      body: VideoScreen(),
 
       floatingActionButton: CustomFab(
         fromCamera: () async {
