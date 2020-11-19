@@ -1,6 +1,6 @@
-import 'package:firebase_gallery/video.dart';
+import 'package:firebase_gallery/video/video.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_gallery/images.dart';
+import 'package:firebase_gallery/image/images.dart';
 
 class Homescreen extends StatefulWidget {
   @override

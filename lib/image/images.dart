@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:firebase_gallery/details.dart';
+import 'package:firebase_gallery/image/details.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:firebase_gallery/Custom_fab.dart';
@@ -17,6 +16,7 @@ class Images extends StatefulWidget {
 
 class _ImagesState extends State<Images> {
   File _image;
+  int num = 0;
   final picker = ImagePicker();
   String _uploadFileURL;
   CollectionReference imgColRef;

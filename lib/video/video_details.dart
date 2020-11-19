@@ -33,7 +33,7 @@ class _VideoDetailsState extends State<VideoDetails> {
             child: GestureDetector(
               child: Center(
                 child: Hero(
-                  tag: 'VideoHeroDetails',
+                  tag: 'VidDetails',
                   child: Text('this will contain the video'),
                 ),
               ),

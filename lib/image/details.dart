@@ -34,7 +34,7 @@ class _DetailScreenState extends State<DetailScreen> {
               child: GestureDetector(
                 child: Center(
                   child: Hero(
-                    tag: 'imageHero',
+                    tag: 'Detail',
                     child: Image.network(widget.url),
                   ),
                 ),

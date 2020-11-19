@@ -1,9 +1,9 @@
-import 'package:firebase_gallery/videoscreen.dart';
+import 'package:firebase_gallery/video/videoscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_gallery/custom_fab.dart';
+import 'package:firebase_gallery/shared/custom_fab.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import 'package:firebase_gallery/alert.dart';
+import 'package:firebase_gallery/video/alert.dart';
 
 class Video extends StatefulWidget {
   @override
