@@ -5,7 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:firebase_gallery/image/details.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import 'package:firebase_gallery/Custom_fab.dart';
+import 'package:firebase_gallery/shared/custom_fab.dart';
 import 'package:path/path.dart' as Path;
 import 'package:transparent_image/transparent_image.dart';
 

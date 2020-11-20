@@ -77,6 +77,13 @@ with SingleTickerProviderStateMixin {
     Widget image() {
     return new Container(
       child: FloatingActionButton(
+        // Here heroTag is being null because if you use more than 1
+        // floating action button(FAB) on a screen without giving them unique or null herotag
+        // It will give a error "There are multiple heros with same tag"
+        // during Navigation from one page to other
+        // Always set hero tags to null or give them unique tags
+        // when using more than one FAB
+        heroTag: null,
         onPressed: widget.fromGallery,
         tooltip: 'Image',
         child: Icon(Icons.collections),
@@ -87,6 +94,7 @@ with SingleTickerProviderStateMixin {
   Widget add() {
     return new Container(
       child: FloatingActionButton(
+        heroTag: null,
         onPressed: widget.fromCamera,
         tooltip: 'Add',
         child: Icon(Icons.add_a_photo),
@@ -96,6 +104,7 @@ with SingleTickerProviderStateMixin {
 
   Widget toggle() {
     return FloatingActionButton(
+      heroTag: null,
       backgroundColor: _animationColor.value,
       onPressed: animate,
       tooltip: 'Toggle',

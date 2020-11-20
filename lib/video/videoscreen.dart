@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_gallery/video/video_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -52,7 +53,12 @@ class _VideoScreenState extends State<VideoScreen> {
                         ),
                   ),
                   onTap: (){
-                    print('Details page open');
+                    //print('Details page open');
+                    Navigator.push(context,
+                            MaterialPageRoute(builder: (_) {
+                              return VideoDetails(url: snapshot.data.documents[index].get('url'),);
+                            }));
+                    
                   },
                 ),
                 staggeredTileBuilder: (index) =>
