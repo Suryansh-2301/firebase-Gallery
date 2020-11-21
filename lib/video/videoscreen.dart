@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_gallery/video/video_details.dart';
+import 'package:firebase_gallery/video/video_thumbnail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -49,7 +50,7 @@ class _VideoScreenState extends State<VideoScreen> {
                         child: ClipRRect(
                           borderRadius:
                           BorderRadius.all(Radius.circular(12)),
-                          child: Center(child: Text('TODO: video Thumbnail here')),
+                          child: VideoThumbnail(url: snapshot.data.documents[index].get('url'),),
                         ),
                   ),
                   onTap: (){

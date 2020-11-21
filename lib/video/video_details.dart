@@ -60,6 +60,7 @@ class _VideoDetailsState extends State<VideoDetails> {
               },
             ),
           ),
+          
           Column(
             children: [
               Container(
