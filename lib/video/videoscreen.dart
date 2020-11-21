@@ -34,24 +34,39 @@ class _VideoScreenState extends State<VideoScreen> {
                 itemCount: snapshot.data.documents.length,
                 crossAxisCount: 2,
                 itemBuilder: (context,index) => GestureDetector(
-                  child: Container(
-                    margin: EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                            color: Colors.transparent,
+                  child: Stack(
+                    children: [Container(
+                      margin: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(12)),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 5,
+                                    offset: Offset(0, 0))
+                              ]),
+                          child: ClipRRect(
                             borderRadius:
                             BorderRadius.all(Radius.circular(12)),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 5,
-                                  offset: Offset(0, 0))
-                            ]),
-                        child: ClipRRect(
-                          borderRadius:
-                          BorderRadius.all(Radius.circular(12)),
-                          child: VideoThumbnail(url: snapshot.data.documents[index].get('url'),),
+                            child: VideoThumbnail(url: snapshot.data.documents[index].get('url'),),
+                          ),
+                    ),
+                    Center(
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
                         ),
+                        child: Icon(
+                          Icons.play_arrow,
+                        ),
+                      )),
+                    ]
                   ),
                   onTap: (){
                     //print('Details page open');
